@@ -10,44 +10,40 @@ switch(arg):
     default:
         // Handle default case
 -----------------------------------------------
-class Case1(SwitchCase):
-    def __init__(self, arg1, arg2):
-        self.__arg1 = arg1
-        self.__arg2 = arg2
-    def do_call(self, *args, **kwargs)
-        # Handle call
-        return self.__arg1 - self.__arg2
-class Case2(SwitchCase):
-    def __init__(self, arg1, arg2):
-        self.__arg1 = arg1
-        self.__arg2 = arg2
-    def do_call(self, *args, **kwargs)
-        # Handle call
-        return self.__arg1 * self.__arg2
-class CaseDefault(SwitchCase):
-    def __init__(self, arg1, arg2):
-        self.__arg1 = arg1
-        self.__arg2 = arg2
-    def do_call(self, *args, **kwargs)
-        return self.__arg1 + self.__arg2
-PySwitch(arg, {
-    case_1 : Case1(arg1, arg2),
-    case_2 : Case2(arg1, arg2)
-}, CaseDefault(arg1, arg2))
+@SwitchCase
+def case_1(arg1):
+    print 'Case 1: ', arg1
+
+@SwitchCase
+def case_2(arg1, arg2):
+    print 'Case 2: ', arg2
+
+@SwitchCase
+def default_case(arg1, arg2, arg3):
+    print 'Default case: ', arg1, arg2, arg3
+
+PySwitch(3, {
+    1: case_1('a'),
+    2: case_2('abc', 42),
+    }, default_case(13, 'somestring', 3.14))
 """
 __author__ = 'Thomas Li Fredriksen'
 __license__ = 'MIT'
 
-class SwitchCase(object):
-    """Switch-case master class
-    All switch-case objects must inherit from this class
-    """
-    def do_call(self, *args, **kwargs):
-        """Overload this function to simulate function call"""
-        pass
-    def __call__(self, *args, **kwargs):
-        """Call do_call-method"""
-        self.do_call(args, kwargs)
+
+def SwitchCase(callable):
+    """Switch-case decorator"""
+    class case_class(object):
+        def __init__(self, *args, **kwargs):
+            self.args = args
+            self.kwargs = kwargs
+
+        def __call__(self):
+            return callable(*self.args, **self.kwargs)
+
+    return case_class
+
+
 class PySwitch(object):
     def __init__(self, key, cases, default=None):
         """Switch-statement implementation

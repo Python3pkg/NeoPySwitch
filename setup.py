@@ -16,12 +16,12 @@ with open(path.join(PWD, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 data = dict(
-        name='PySwitch',
+        name='NeoPySwitch',
         version='0.1.0',
         url='https://github.com/thomafred/pywitch',
-        packages=['PySwitch'],
+        packages=['NeoPySwitch'],
         package_data={
-            'PySwitch' : [
+            'NeoPySwitch' : [
                 'LICENSE',
                 'README.md'
                 ]
@@ -29,8 +29,8 @@ data = dict(
         license='MIT',
         description='Python switch implementation',
         long_description=long_desc,
-        provides=['PySwitch'],
-        install_requires=required,
+        provides=['NeoPySwitch'],
+        install_requires=[],
         author='Thomas Li Fredriksen',
         author_email='tom@lifredriksen.no',
         classifiers=[

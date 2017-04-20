@@ -1,4 +1,4 @@
-# PySwitch
+# NeoPySwitch
 
 TODO: Write a project description
 

@@ -7,18 +7,26 @@ __license__ = 'MIT'
 
 import setuptools
 from distutils.core import setup
-from codecs import open
 from os import path
 
 PWD = path.abspath(path.dirname(__file__))
+README_PATH=path.join(PWD, 'README.md')
 
-with open(path.join(PWD, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+### Generate description
+try:
+    import pypandoc
+    long_description = pypandoc.convert(README_PATH, 'rst')
+except(IOError, ImportError):
+    print '***Failed to import pypandoc. Displaying unformatted markdown***'
+
+    from codecs import open
+    with open(README_PATH, encoding='utf-8') as f:
+        long_description = f.read()
 
 data = dict(
         name='NeoPySwitch',
         version='0.1.0',
-        url='https://github.com/thomafred/pywitch',
+        url='https://github.com/thomafred/NeoPySwitch',
         packages=['NeoPySwitch'],
         package_data={
             'NeoPySwitch' : [

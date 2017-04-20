@@ -10,21 +10,21 @@ switch(arg):
     default:
         // Handle default case
 -----------------------------------------------
-class Case1(SwitchCall):
+class Case1(SwitchCase):
     def __init__(self, arg1, arg2):
         self.__arg1 = arg1
         self.__arg2 = arg2
     def do_call(self, *args, **kwargs)
         # Handle call
         return self.__arg1 - self.__arg2
-class Case2(SwitchCall):
+class Case2(SwitchCase):
     def __init__(self, arg1, arg2):
         self.__arg1 = arg1
         self.__arg2 = arg2
     def do_call(self, *args, **kwargs)
         # Handle call
         return self.__arg1 * self.__arg2
-class CaseDefault(SwitchCall):
+class CaseDefault(SwitchCase):
     def __init__(self, arg1, arg2):
         self.__arg1 = arg1
         self.__arg2 = arg2
@@ -38,9 +38,9 @@ PySwitch(arg, {
 __author__ = 'Thomas Li Fredriksen'
 __license__ = 'MIT'
 
-class SwitchCall(object):
-    """Switch-call master class
-    All switch-call objects must inherit from this class
+class SwitchCase(object):
+    """Switch-case master class
+    All switch-case objects must inherit from this class
     """
     def do_call(self, *args, **kwargs):
         """Overload this function to simulate function call"""

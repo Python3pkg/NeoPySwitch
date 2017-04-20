@@ -25,7 +25,7 @@ except(IOError, ImportError):
 
 data = dict(
         name='NeoPySwitch',
-        version='0.1.0',
+        version='0.1.1',
         url='https://github.com/thomafred/NeoPySwitch',
         packages=['NeoPySwitch'],
         package_data={

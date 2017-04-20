@@ -1,14 +1,56 @@
 # NeoPySwitch
 
-TODO: Write a project description
+Python ```switch```-statement pseudo-implementation. Mimics C-style switch statements.
+
+The following two code blocks should be equivalent:
+
+```c
+switch(arg):
+{
+    case 1:
+        // Handle case
+    case 2:
+        // Handle case
+    default:
+        // Handle default case
+}
+```
+
+```python
+class Case1(SwitchCase):
+    def __init__(self, arg1, arg2):
+        self.__arg1 = arg1
+        self.__arg2 = arg2
+    def do_call(self, *args, **kwargs)
+        # Handle call
+        return self.__arg1 - self.__arg2
+class Case2(SwitchCase):
+    def __init__(self, arg1, arg2):
+        self.__arg1 = arg1
+        self.__arg2 = arg2
+    def do_call(self, *args, **kwargs)
+        # Handle call
+        return self.__arg1 * self.__arg2
+class CaseDefault(SwitchCase):
+    def __init__(self, arg1, arg2):
+        self.__arg1 = arg1
+        self.__arg2 = arg2
+    def do_call(self, *args, **kwargs)
+        return self.__arg1 + self.__arg2
+PySwitch(arg, {
+    case_1 : Case1(arg1, arg2),
+    case_2 : Case2(arg1, arg2)
+}, CaseDefault(arg1, arg2))
+
+```
 
 ## Installation
 
-TODO: Describe the installation process
+Simply use pip:
 
-## Usage
-
-TODO: Write usage instructions
+```
+$ pip install NeoPySwitch
+```
 
 ## Contributing
 
@@ -20,7 +62,7 @@ TODO: Write usage instructions
 
 ## History
 
-TODO: Write history
+* 0.1.0 - First release
 
 ## Credits
 

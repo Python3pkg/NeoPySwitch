@@ -28,7 +28,7 @@ data = dict(
             },
         license='MIT',
         description='Python switch implementation',
-        long_description=long_desc,
+        long_description=long_description,
         provides=['NeoPySwitch'],
         install_requires=[],
         author='Thomas Li Fredriksen',

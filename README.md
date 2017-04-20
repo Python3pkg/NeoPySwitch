@@ -24,8 +24,8 @@ TODO: Write history
 
 ## Credits
 
-[Zeno Rocha](https://github.com/zenorocha) - [GitHub README template](https://gist.github.com/zenorocha/4526327)
-[Ethan Forman](https://bitbucket.org/stoneleaf/) -
+* [Zeno Rocha](https://github.com/zenorocha) - [GitHub README template](https://gist.github.com/zenorocha/4526327)
+* [Ethan Forman](https://bitbucket.org/stoneleaf/) -
 [```setup.py```-reference](https://bitbucket.org/stoneleaf/enum34/src/f24487b45cd041fc9406d67441d2186ac70772b7/setup.py?at=default&fileviewer=file-view-default)
 
 ## License

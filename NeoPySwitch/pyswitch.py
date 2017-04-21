@@ -44,8 +44,7 @@ def SwitchCase(callable):
     return case_class
 
 
-class PySwitch(object):
-    def __init__(self, key, cases, default=None):
+def PySwitch(key, cases, default=None):
         """Switch-statement implementation
         :param key: Switch parameter
         :param cases: Dictionary of callbacks

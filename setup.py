@@ -8,9 +8,15 @@ __license__ = 'MIT'
 import setuptools
 from distutils.core import setup
 from os import path
+import unittest
 
 PWD = path.abspath(path.dirname(__file__))
 README_PATH=path.join(PWD, 'README.md')
+
+def testSuite():
+    test_loader = unittest.TestLoader()
+    test_suite = test_loader.discover('tests', pattern='test_*.py')
+    return test_suite
 
 ### Generate description
 try:
@@ -25,7 +31,7 @@ except(IOError, ImportError):
 
 data = dict(
         name='NeoPySwitch',
-        version='0.2.0',
+        version='0.2.1',
         url='https://github.com/thomafred/NeoPySwitch',
         packages=['NeoPySwitch'],
         package_data={
@@ -39,6 +45,7 @@ data = dict(
         long_description=long_description,
         provides=['NeoPySwitch'],
         install_requires=[],
+        test_suite="setup.testSuite",
         author='Thomas Li Fredriksen',
         author_email='tom@lifredriksen.no',
         classifiers=[

@@ -23,7 +23,7 @@ try:
     import pypandoc
     long_description = pypandoc.convert(README_PATH, 'rst')
 except(IOError, ImportError):
-    print '***Failed to import pypandoc. Displaying unformatted markdown***'
+    print('***Failed to import pypandoc. Displaying unformatted markdown***')
 
     from codecs import open
     with open(README_PATH, encoding='utf-8') as f:
